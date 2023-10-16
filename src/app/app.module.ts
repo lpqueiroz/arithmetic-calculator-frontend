@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RecordPipe } from './pipes/record.pipe';
-import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { LogoutComponent } from './logout/logout.component';
     NewOperationComponent,
     UserRecordsComponent,
     RecordPipe,
-    LogoutComponent
   ],
   imports: [
     BrowserModule,

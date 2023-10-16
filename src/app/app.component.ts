@@ -9,7 +9,7 @@ import { LoginService } from './services/login.service';
 export class AppComponent implements OnInit {
   title = 'arithmetic-calculator';
 
-  constructor(private loginService: LoginService) {}
+  constructor() {}
 
   ngOnInit(): void {
   }
