@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Live version
+The live version of this project is on the following link: https://5e33-2804-29b8-509a-1734-1deb-e208-3c23-2ec6.ngrok-free.app
+
+## Credentials to access
+username: `rootuser@gmail.com`
+password: `123456`
