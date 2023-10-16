@@ -1,0 +1,74 @@
+<div ngbDropdown class="dropdown menu">
+  <button ngbDropdownToggle class="btn btn-secondary" type="button" id="dropdownMenuButton1" aria-expanded="false">
+      Menu
+  </button>
+  <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+    <button ngbDropdownItem (click)="navigateToRecords()">
+      Records
+    </button>
+    <button ngbDropdownItem (click)="onLogout()">
+      Logout
+    </button>
+  </ul>
+</div>
+
+<div>
+  <h1 class="center padding-top-title">Arithmetic Calculator</h1>
+</div>
+<div ngbDropdown class="dropdown center">
+    <button ngbDropdownToggle class="btn btn-primary" type="button" id="dropdownMenuButton1" aria-expanded="false">
+        Select Operation
+    </button>
+    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+      <button ngbDropdownItem (click)="fillOperationType('addition')">
+        Addition
+      </button>
+      <button ngbDropdownItem (click)="fillOperationType('subtraction')">
+        Subtraction
+      </button>
+      <button ngbDropdownItem (click)="fillOperationType('multiplication')">
+        Multiplication
+      </button>
+      <button ngbDropdownItem (click)="fillOperationType('division')">
+        Division
+      </button>
+      <button ngbDropdownItem (click)="fillOperationType('square_root')">
+        Square Root
+      </button>
+      <button ngbDropdownItem (click)="fillOperationType('random_string')">
+        Random String
+      </button>
+    </ul>
+</div>
+<div *ngIf="isBasicOperation()" class="input">
+    <form [formGroup]="operationForm" (ngSubmit)="performBasicCalculation()">
+        <div class="form-group">
+            <label for="input1">Input 1</label>
+            <input required id="input1" type="number" formControlName="input1" class="form-control" [(ngModel)]="input1">
+        </div>
+        <div class="form-group">
+            <label for="input2">Input 2</label>
+            <input required id="input2" type="number" formControlName="input2" class="form-control" [(ngModel)]="input2">
+        </div>
+        <div class="calculate-btn">
+            <button class="btn btn-success" type="submit">Calculate</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="isSquareRootOperation()" class="input">
+    <form [formGroup]="operationForm" (ngSubmit)="performSquareRootCalculation()">
+        <div class="form-group">
+            <label for="input1">Input</label>
+            <input required id="input1" type="number" formControlName="input1" class="form-control" [(ngModel)]="input1">
+        </div>
+        <div class="calculate-btn">
+            <button class="btn btn-success" type="submit">Calculate</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="isRandomStringOperation()" class="center calculate-btn">
+    <button class="btn btn-success" (click)="getRandomString()">Generate Random String</button>
+</div>
+<div *ngIf="!!response" class="center response">
+  <h3>Operation result is {{ operationResult }}</h3>
+</div>

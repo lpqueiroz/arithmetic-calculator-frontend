@@ -1,0 +1,21 @@
+.padding-top-title {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.input {
+    width: 15%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.calculate-btn {
+    margin-top: 20px;
+}
+
+.response {
+    margin-top: 10px;
+    background-color: chartreuse;
+    padding: 10px;
+}

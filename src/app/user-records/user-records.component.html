@@ -1,0 +1,51 @@
+<div ngbDropdown class="dropdown menu">
+    <button ngbDropdownToggle class="btn btn-secondary" type="button" id="dropdownMenuButton1" aria-expanded="false">
+        Menu
+    </button>
+    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+      <button ngbDropdownItem (click)="navigateToCalculator()">
+        Arithmetic Calculator
+      </button>
+      <button ngbDropdownItem (click)="onLogout()">
+        Logout
+      </button>
+    </ul>
+</div>
+
+
+<div class="container margin-top-table">
+    <div>
+        <h1 class="center">User Records</h1>
+    </div>
+    <div class="form-group">
+        <input type="search" class="form-control" [(ngModel)]="filter" placeholder="Filter by operation type">
+    </div>
+    
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Operation Type</th>
+            <th scope="col">Username</th>
+            <th scope="col">User Balance</th>
+            <th scope="col">Operation Response</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records | slice: (page-1) * pageSize : page * pageSize | record:filter">
+                <td>{{ record.operationType }}</td>
+                <td>{{ record.username }}</td>
+                <td>{{ record.userBalance }}</td>
+                <td>{{ record.operationResponse }}</td>
+                <td>{{ record.date }}</td>
+                <td><button class="btn btn-danger" (click)="onDelete(record.recordId.value)">Delete</button></td>
+            </tr>
+            <ngb-pagination *ngIf="!!records"
+                [collectionSize]="records.length"
+                [(page)]="page" 
+                [pageSize]="pageSize"
+                >
+            </ngb-pagination>
+        </tbody>
+    </table>
+</div>
